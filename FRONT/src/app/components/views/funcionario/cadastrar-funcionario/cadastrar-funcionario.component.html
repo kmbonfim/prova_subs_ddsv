@@ -1,0 +1,22 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Cadastrar Funcionário</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-form-field class="input" id="nome">
+            <mat-label for="nome">Nome:</mat-label>
+            <input matInput type="text" name="nome" [(ngModel)]="nome" />
+        </mat-form-field>
+        <mat-form-field class="input" id="setor">
+            <mat-label for="setor">Setor:</mat-label>
+            <input matInput type="text" name="setor" [(ngModel)]="setor" />
+        </mat-form-field>        
+        <mat-form-field class="input" id="cargo">
+            <mat-label for="cargo">Cargo:</mat-label>
+            <input matInput type="text" name="cargo" [(ngModel)]="cargo" />
+        </mat-form-field>
+    </mat-card-content>
+    <button mat-raised-button color="warn" (click)="cadastrar()">
+        Cadastrar
+    </button>
+</mat-card>

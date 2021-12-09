@@ -1,0 +1,42 @@
+<a mat-raised-button color="primary" routerLink="/folha/cadastrar">
+    <mat-icon mat-list-icon>add</mat-icon>
+    Nova Folha</a
+>
+
+<table mat-table [dataSource]="folhas" class="mat-elevation-z8">
+    <!-- Coluna do id -->
+    <ng-container matColumnDef="folhaId">
+        <th mat-header-cell *matHeaderCellDef>#</th>
+        <td mat-cell *matCellDef="let folha">{{ folha.folhaId }}</td>
+        <a mat-raised-button color="primary" routerLink="/folha/cadastrar">
+        <mat-icon mat-list-icon>add</mat-icon>Folha de Pagamento</a>
+    </ng-container>
+    <!-- Coluna do nome do funcionário -->
+    <<ng-container matColumnDef="funcionario">
+        <th mat-header-cell *matHeaderCellDef>Nome</th>
+        <td mat-cell *matCellDef="let folha">{{ folha.funcionario!.nome }}</td>
+    </ng-container>
+    <!-- Coluna do salário -->
+    <ng-container matColumnDef="salario">
+        <th mat-header-cell *matHeaderCellDef>Salário</th>
+        <td mat-cell *matCellDef="let folha">{{ folha.salario }}</td>
+    </ng-container>
+    <!-- Coluna do horas -->
+    <ng-container matColumnDef="horas">
+        <th mat-header-cell *matHeaderCellDef>Horas</th>
+        <td mat-cell *matCellDef="let folha">{{ folha.horas }}</td>
+    </ng-container>
+    <!-- Coluna do ano -->
+    <ng-container matColumnDef="ano">
+        <th mat-header-cell *matHeaderCellDef>Ano</th>
+        <td mat-cell *matCellDef="let folha">{{ folha.ano }}</td>
+    </ng-container>
+    <!-- Coluna do mes -->
+    <ng-container matColumnDef="mes">
+        <th mat-header-cell *matHeaderCellDef>Mês</th>
+        <td mat-cell *matCellDef="let folha">{{ folha.mes }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="colunasExibidas"></tr>
+    <tr mat-row *matRowDef="let row; columns: colunasExibidas"></tr>
+</table>
